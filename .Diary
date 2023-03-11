@@ -1,0 +1,70 @@
+Espero que esta vez no me cargue los apuntes
+
+# For Network Connection
+	I forgot that command like "nmcli" to connect and view networks GUI-like
+
+# Ubuntu i3-gaps
+	I got into trouble installing i3-gaps due to incompatible version of this on Ubuntu Jammy, I followed this guide, that didn't undestand at all but worked really fine, it broke my volume session tho, that last ting was quicly fixed with "pluseaudio --start". Guide for i3-gaps install --> https://askubuntu.com/questions/1415720/ubuntu-22-04-jammy-jellyfish-cannot-install-i3-gaps.
+
+	I still don't know the reason but 2 days later after I installed picom my system forgot about i3-gaps and returned using i3wm. Maybe i bc I installed it by accident
+
+	I used picom for border radius instead i3-rounded_coreners because this last one it's not up to date.
+
+# Rofi pwermenu
+	After setting all of this following the rofi github repository, I faced an error which said "unexpected....blah blah blah... on line 54". So I commented that line of code like a chad and it works -->         /*run,drun {
+                fallback-icon: "application-x-addon";
+        }*/
+
+	I configured two powermenus, one simple and elegant for normal use and another one more otaku-like which I'll use only on a otaku-safe place, also I configured the lockscreen with betterlockscreen, notice that to run properly betterlockscreen I had to install i3lock-colors. And keep in mind the path of the betterlockscreen binary that I installed doesn't coincide with the path that rofi expects it to be (rofi expects /usr/bin) (I installed it on /usr/local/bin)
+
+
+# See disk usage
+	df -H to view disk space used and avaible
+
+# Inverted touchpad scrolling and X11 ERROR
+	I wanted to scroll like windows on my ubuntu machine, so I had to edit the /usr/share/X11/xorg.config.d/30/40-libinput.conf file and ad a line on the touchpad section that said Option "NaturalScrolling" "True"
+	Unluckily I wrote that line with a typo and I could no longer acces to my i3 sesion, so a proper way to fix this is to go to ~/.local/share/xorg/Xorg.0.log and view what error is showing, the file mentioned is for rootless the other one with root permissions is /var/log/Xorg.0.log
+
+
+# Neofetch config
+
+	After trying to get a good ascii image I decided to just work with images on neofetch, this is done with w3m, you have to install it and change de image_backend parameter of the neofetch config file from "ascii" to "w3m" and specify the path of the picture.
+	
+	My gnome-terminal didn't fetch quite well the picture tho. Look at this table: 
+
+		Terminal	Neofetch	Ranger
+
+		GNOME Terminal	Very Bad	Okay
+		Sakura		Bad		Okay
+		Termite		Bad		Okay
+		LXTerminal	Bad		Okay
+		Alacritty	Okay		Good
+		St		Okay		Good
+		Urxvt		Good		Good
+		Xterm		Good		Good
+
+	So I ended up using URXVT terminal for performance but it still doesnt fetch it as good as I wanted it to be fetched.
+
+
+# Urxvt tweaked
+
+	The default Urxvt terminal is really ugly so I decided to configurate it a bit. To do so, you have to edit ~/.Xresources file and after that load it with xrdb -load .Xresources. 
+
+# Vim settings
+
+	As always vim didn't read the ~/.vimrc but this time I managed to fix it quite quickly thanks to a stack overflow thread:
+
+Instead of doing the following I just moved the .vimrc file as vimrc on /usr/share/vimrc
+
+	Use the command on your terminal --> strace -o vim_strace vim 
+and then close it to open the new file callled vim_stace, to search for "vimrc" inside that file, then you will see the path where vim is looking for vimrc and so for the settings. I had it on /usr/share/vimrc so I changed it with /home/alex/.vimrc
+
+	Also, using :scriptnames on vim you can see where is vim looking for settings
+
+
+# Connecting Ubuntu to a monitor
+
+    Just go to Settings > Display > Mirror
+
+    In case you are using i3 notice that settings open with gnome-control-center program NOT with gsettings
+    
