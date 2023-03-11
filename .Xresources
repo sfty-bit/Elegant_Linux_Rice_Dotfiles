@@ -1,0 +1,52 @@
+/*URxvt.background:	#1F1D19*/
+URxvt.background:	#2A2D2E
+URxvt.foreground:	#ffffff
+URxvt.font:		xft:DejaVu Sans Mono:pixelsize=16:antialias=true:hinting=true
+URxvt.boldFont:		xft:DejaVu Sans Mono:bold:pixelsize=16:antialias=true:hinting=true
+URxvt.scrollBar:	flase
+URxvt.saveLines:	65535
+ 
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.internalBorder:  30
+
+
+URxvt*cursorColor: #EFFFFF
+URxvt*colorUL: #ffa500
+URxvt*borderColor: #2A2D2E
+
+! black
+*color0: #2A2D2E
+*color8: #2A2D2E
+
+! red
+*color1:  #EE574D
+*color9:  #9C2F28
+!
+! green
+*color2:  #00FF2B
+*color10: #33D17A
+!
+! yellow
+*color3:  #A2734C
+*color11: #E9AD0C
+!
+! blue
+*color4:  #328EFE
+*color12: #2A7BDE
+
+! magenta
+*color5:  #A347BA
+*color13: #C061CB
+
+! cyan
+*color6:  #2AA1B3
+*color14: #33C7DE
+
+! white
+*color7:  #D0CFCC
+*color15: #FFFFFF
